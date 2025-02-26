@@ -45,7 +45,10 @@ public class PersonaService implements IPersonaService {
         if (persona.getEdad()!=null){
             perso.setEdad(persona.getEdad());
         }
+        if (persona.getMascota()!=null){
+            perso.setMascota(persona.getMascota());
+        }
         personaRepository.save(perso);
-        return personaRepository.findById(perso.getId()).orElse(null);
+        return this.obtenerPorId(perso.getId());
     }
 }
